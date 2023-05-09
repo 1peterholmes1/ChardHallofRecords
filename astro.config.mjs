@@ -7,7 +7,7 @@ import tailwind from "@astrojs/tailwind";
 // https://astro.build/config
 export default defineConfig({
   integrations: [sanity({
-    projectId: context.env.PROJECT_ID,
+    projectId: 'txj58z4q',
     dataset: 'production',
     apiVersion: '2023-05-01'
     }), svelte(), tailwind()]
