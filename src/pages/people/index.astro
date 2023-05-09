@@ -1,0 +1,20 @@
+---
+import BaseHead from "@components/BaseHead.astro";
+import Header from "@components/Header.astro";
+// import { Debug } from "astro/components";
+import { useSanityClient } from "astro-sanity";
+import PersonList from "@components/PersonList.svelte";
+
+const people = await useSanityClient().fetch(`*[_type == "person"]`);
+// console.log(boards);
+---
+
+<html lang="en">
+  <BaseHead title={"People"} description={""} />
+  <body>
+    <Header title={"People"} />
+    <h1 class="tw-text-xl tw-text-center">People</h1>
+    <!-- <Debug {boards} /> -->
+    <PersonList people={people} />
+  </body>
+</html>

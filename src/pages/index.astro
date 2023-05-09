@@ -1,8 +1,9 @@
 ---
-import BaseHead from '../components/BaseHead.astro';
-import Header from '../components/Header.astro';
-import Footer from '../components/Footer.astro';
-import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
+import BaseHead from "../components/BaseHead.astro";
+import Header from "../components/Header.astro";
+import Footer from "../components/Footer.astro";
+import { SITE_TITLE, SITE_DESCRIPTION } from "../consts";
+import "@fontsource/castoro";
 ---
 
 <!DOCTYPE html>
@@ -12,38 +13,29 @@ import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
 	</head>
 	<body>
 		<Header title={SITE_TITLE} />
-		<main>
-			<h1>🧑‍🚀 Hello, Astronaut!</h1>
-			<p>
-				Welcome to the official <a href="https://astro.build/">Astro</a> blog starter template. This
-				template serves as a lightweight, minimally-styled starting point for anyone looking to build
-				a personal website, blog, or portfolio with Astro.
+		<main class="tw-ml-8 tw-space-y-4">
+			<h1
+				style="font-family: castoro"
+				class="tw-font-serif tw-font-bold tw-text-xl"
+			>
+				Welcome to the Chard Hall of Records
+			</h1>
+			<p class="tw-ml-8">
+				Where the fierce and friendly competition between housemates is
+				documented for posterity. Here, we chronicle the various challenges,
+				contests, and games that take place within a house of friends, from epic
+				Madden games to intense Die tournaments. Our goal is to celebrate the
+				camaraderie and sportsmanship of these competitions, as well as to
+				provide a comprehensive record of the winners, losers, and everything in
+				between. Whether you're a competitor, a spectator, or simply someone who
+				appreciates the thrill of the game, we invite you to explore The Chard
 			</p>
-			<p>
-				This template comes with a few integrations already configured in your
-				<code>astro.config.mjs</code> file. You can customize your setup with
-				<a href="https://astro.build/integrations">Astro Integrations</a> to add tools like Tailwind,
-				React, or Vue to your project.
-			</p>
-			<p>Here are a few ideas on how to get started with the template:</p>
-			<ul>
-				<li>Edit this page in <code>src/pages/index.astro</code></li>
-				<li>Edit the site header items in <code>src/components/Header.astro</code></li>
-				<li>Add your name to the footer in <code>src/components/Footer.astro</code></li>
-				<li>Check out the included blog posts in <code>src/pages/blog/</code></li>
-				<li>Customize the blog post page layout in <code>src/layouts/BlogPost.astro</code></li>
-			</ul>
-			<p>
-				Have fun! If you get stuck, remember to <a href="https://docs.astro.build/"
-					>read the docs
-				</a> or <a href="https://astro.build/chat">join us on Discord</a> to ask questions.
-			</p>
-			<p>
-				Looking for a blog template with a bit more personality? Check out <a
-					href="https://github.com/Charca/astro-blog-template"
-					>astro-blog-template
-				</a> by <a href="https://twitter.com/Charca">Maxi Ferreira</a>.
-			</p>
+			<!-- <p> -->
+			<!-- 	Lorem ipsum dolor sit amet consectetur adipisicing elit. Exercitationem -->
+			<!-- 	optio voluptates unde laborum aliquam iure placeat culpa officia eaque, -->
+			<!-- 	autem incidunt molestiae magnam ipsam beatae? Aut consequuntur -->
+			<!-- 	blanditiis beatae iure. -->
+			<!-- </p> -->
 		</main>
 		<Footer />
 	</body>

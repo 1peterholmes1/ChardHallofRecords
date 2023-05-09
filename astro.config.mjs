@@ -1,10 +1,15 @@
 import { defineConfig } from 'astro/config';
-import mdx from '@astrojs/mdx';
+import sanity from "astro-sanity";
+import svelte from "@astrojs/svelte";
+import tailwind from "@astrojs/tailwind";
+import {PROJECT_ID} from "./src/env"
 
-import sitemap from '@astrojs/sitemap';
 
 // https://astro.build/config
 export default defineConfig({
-	site: 'https://example.com',
-	integrations: [mdx(), sitemap()],
+  integrations: [sanity({
+    projectId: PROJECT_ID,
+    dataset: 'production',
+    apiVersion: '2023-05-01'
+    }), svelte(), tailwind()]
 });

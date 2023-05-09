@@ -10,9 +10,20 @@
     "astro": "astro"
   },
   "dependencies": {
+    "@astrojs/svelte": "^2.1.0",
+    "@astrojs/tailwind": "^3.1.1",
+    "@fontsource/castoro": "^4.5.9",
+    "@portabletext/svelte": "^2.0.0",
+    "@sanity/client": "^5.4.2",
+    "@sanity/types": "^3.10.0",
     "astro": "^2.3.2",
-    "@astrojs/mdx": "^0.19.0",
-    "@astrojs/rss": "^2.4.0",
-    "@astrojs/sitemap": "^1.2.2"
+    "astro-sanity": "^1.1.5",
+    "bootstrap": "^5.2.3",
+    "date-and-time": "^3.0.0",
+    "sanity": "^3.9.1",
+    "shiki": "^0.14.2",
+    "svelte": "^3.54.0",
+    "sveltestrap": "^5.10.0",
+    "tailwindcss": "^3.0.24"
   }
 }

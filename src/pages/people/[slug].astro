@@ -1,0 +1,37 @@
+---
+import BaseHead from "@components/BaseHead.astro";
+import Header from "@components/Header.astro";
+import Profile from "@components/Profile.svelte";
+import { useSanityClient } from "astro-sanity";
+import { urlForImage } from "../../utils/urlForImage";
+
+// async function getEntries(person: string) {
+//   return await useSanityClient().fetch(`*[board.entry.name in ["${person}"]]`)
+// }
+
+export async function getStaticPaths() {
+  const people = await useSanityClient().fetch(
+    `*[_type == "person"]{name, slug, bio, image}`
+  );
+
+  return people.map((person: any) => {
+    let imageurl: string = "";
+    // const entries = getEntries(person);
+    if (person?.image) {
+      imageurl = urlForImage(person?.image?.asset).width(200).url();
+    }
+    return {
+      params: { slug: person.slug?.current || "" },
+      props: { ...person, imageurl },
+    };
+  });
+
+}
+
+const { name, bio, imageurl } = Astro.props;
+let description = `Profile for ${name}`;
+---
+
+<BaseHead title={name} description={description} />
+<Header />
+<Profile client:load name={name} bio={bio} image={imageurl}  />

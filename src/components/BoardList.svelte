@@ -1,0 +1,13 @@
+<script lang="ts">
+  export let boards: any[];
+</script>
+
+<ul
+  class="tw-w-1/2 mx-auto tw-mt-4 tw-bg-slate-100 tw-p-4 tw-rounded-lg tw-divide-y tw-divide-slate-400"
+>
+  {#each boards as board}
+    <li class="tw-py-2 first:tw-pt-0 last:tw-pb-0">
+      <a href={`/leaderboards/${board.slug.current}`}>{board.title}</a>
+    </li>
+  {/each}
+</ul>

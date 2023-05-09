@@ -1,0 +1,26 @@
+---
+import BaseHead from "@components/BaseHead.astro";
+import Header from "@components/Header.astro";
+import { useSanityClient } from "astro-sanity";
+import Leaderboard from "@components/Leaderboard.svelte";
+
+export async function getStaticPaths() {
+  const leaderboards = await useSanityClient().fetch(
+    `*[_type == "leaderboard"]{title, slug, "board": board[] {..., name->}}`
+  );
+
+  return leaderboards.map((leaderboard: any) => {
+    return {
+      params: { slug: leaderboard.slug?.current || "" },
+      props: { ...leaderboard },
+    };
+  });
+}
+
+const { title, board } = Astro.props;
+let description = `Leaderboard for ${title}`;
+---
+
+<BaseHead title={title} description={description} />
+<Header />
+<Leaderboard client:load board={board} name={title} />
