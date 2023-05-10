@@ -6,7 +6,7 @@ import Leaderboard from "@components/Leaderboard.svelte";
 
 export async function getStaticPaths() {
   const leaderboards = await useSanityClient().fetch(
-    `*[_type == "leaderboard"]{title, slug, "board": board[] {..., name->}}`
+    `*[_type == "leaderboard"]{title, slug, "board": board[] {..., person->}}`
   );
 
   return leaderboards.map((leaderboard: any) => {
