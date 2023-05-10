@@ -27,8 +27,8 @@
           ><Button
             {color}
             class="border-0 tw-group-hover:tw-bg-gray-200 tw-w-full"
-            href={`/people/${entry.name.slug.current}`}
-            >{entry.name.name}</Button
+            href={`/people/${entry.person.slug.current}`}
+            >{entry.person.name}</Button
           ></td
         >
         <td>{entry.value}</td>
