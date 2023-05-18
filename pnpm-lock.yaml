@@ -31,6 +31,9 @@ dependencies:
   date-and-time:
     specifier: ^3.0.0
     version: 3.0.0
+  ordinal-numbers:
+    specifier: ^1.0.3
+    version: 1.0.3
   sanity:
     specifier: ^3.9.1
     version: 3.9.1(react-dom@18.2.0)(react@18.2.0)(styled-components@5.3.10)
@@ -5292,6 +5295,12 @@ packages:
       stdin-discarder: 0.1.0
       strip-ansi: 7.0.1
       wcwidth: 1.0.1
+    dev: false
+
+  /ordinal-numbers@1.0.3:
+    resolution: {integrity: sha512-YpCKFPX7gviv9VQYFT19gWLeTQzNKxl2Uz3iEBmoZIiqLvI6vNnGUzf7H82XFfP0P4b7CDCpMTFmzmzKcqXG+w==}
+    engines: {node: '>=4.1.1'}
+    hasBin: true
     dev: false
 
   /p-finally@2.0.1:

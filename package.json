@@ -20,6 +20,7 @@
     "astro-sanity": "^1.1.5",
     "bootstrap": "^5.2.3",
     "date-and-time": "^3.0.0",
+    "ordinal-numbers": "^1.0.3",
     "sanity": "^3.9.1",
     "shiki": "^0.14.2",
     "svelte": "^3.54.0",

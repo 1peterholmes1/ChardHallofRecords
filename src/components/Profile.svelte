@@ -4,19 +4,10 @@
   export let image: any;
   export let entries: any;
   import { PortableText } from "@portabletext/svelte";
+  import { placeToColor } from "../utils/colorFuncs";
+  import ordinal from "ordinal-numbers";
   // import { urlForImage } from "../utils/urlForImage";
   // console.log(urlForImage(image.asset));
-  const placeToColor = (place: number) => {
-    if (place === 1) {
-      return "tw-bg-yellow-200";
-    } else if (place === 2) {
-      return "tw-bg-gray-200";
-    } else if (place === 3) {
-      return "tw-bg-amber-700";
-    } else {
-      return "";
-    }
-  };
 </script>
 
 <div class="mx-auto tw-bg-gray-100 tw-w-96 tw-rounded-lg tw-p-4">
@@ -40,7 +31,17 @@
       <ul class="tw-divide-y tw-divide-slate-400">
         {#each entries as entry}
           {#if entry.boardentry != null}
-            <li><a href={`/leaderboards/${entry.slug.current}`}>{entry.title}</a> - <span class={placeToColor(entry.boardentry.place) + " tw-p-1"}>{entry.boardentry?.value}</span></li>
+            <li class="tw-py-2">
+              <a href={`/leaderboards/${entry.slug.current}`}>{entry.title}</a>
+              -
+              <span
+                class={placeToColor(entry.boardentry.place) +
+                  " tw-p-1 tw-rounded-lg"}
+                >{entry.boardentry?.value
+                  ? entry.boardentry.value
+                  : `${ordinal(entry.boardentry.place)} Place`}</span
+              >
+            </li>
           {/if}
         {/each}
       </ul>

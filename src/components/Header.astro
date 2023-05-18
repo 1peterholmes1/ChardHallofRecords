@@ -2,32 +2,32 @@
 import HeaderLink from "./HeaderLink.astro";
 import { SITE_TITLE } from "../consts";
 import { Navbar, NavbarBrand, Nav, NavItem, NavLink } from "sveltestrap";
-import "@fontsource/castoro";
 ---
 
 <header>
 	<Navbar color="light" light expand="sm">
-		<NavbarBrand style="font-family: castoro" href="/">
+		<NavbarBrand style="font-family: castoro; font-weight: bold" href="/">
 			Chard Hall of Records
 		</NavbarBrand>
 		<Nav class="mx-end gap-4" navbar>
 			<NavItem>
-				<HeaderLink href="/">Home</HeaderLink>
+				<NavLink href={"/"}>Home</NavLink>
 			</NavItem>
 			<NavItem>
-				<HeaderLink href="/people">People</HeaderLink>
+				<NavLink href="/people">People</NavLink>
 			</NavItem>
 			<NavItem>
-				<HeaderLink href="/leaderboards">Leaderboards</HeaderLink>
+				<NavLink href="/categories">Leaderboards</NavLink>
 			</NavItem>
+			<!-- <NavItem><NavLink href={"/categories"}>Categories</NavLink></NavItem> -->
+			<style>
+				header {
+					margin: 0em 0 2em;
+				}
+				h2 {
+					margin: 0.5em 0;
+				}
+			</style>
 		</Nav>
 	</Navbar>
-	<style>
-		header {
-			margin: 0em 0 2em;
-		}
-		h2 {
-			margin: 0.5em 0;
-		}
-	</style>
 </header>

@@ -5,7 +5,9 @@ import { Debug } from "astro/components";
 import { useSanityClient } from "astro-sanity";
 import BoardList from "@components/BoardList.svelte";
 
-const boards = await useSanityClient().fetch(`*[_type == "leaderboard"]`);
+const boards = await useSanityClient().fetch(
+  `*[_type == "leaderboard"]{...,"categories": categories[]->}`
+);
 // console.log(boards);
 ---
 

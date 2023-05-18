@@ -1,0 +1,23 @@
+---
+import BaseHead from "@components/BaseHead.astro";
+import Header from "@components/Header.astro";
+import CatList from "@components/CatList.svelte";
+// import { Debug } from "astro/components";
+import { useSanityClient } from "astro-sanity";
+
+const cats = await useSanityClient().fetch(
+  `*[_type == "category"]{title, "boards": *[_type == "leaderboard" && references(^._id)]}`
+);
+// console.log(cats[0]);
+// console.log(boards);
+---
+
+<html lang="en">
+  <BaseHead title={"Categories"} description={""} />
+  <body>
+    <Header title={"Categories"} />
+    <h1 class="tw-text-xl tw-text-center">Categories</h1>
+    <!-- <Debug {boards} /> -->
+    <CatList cats={cats} />
+  </body>
+</html>
