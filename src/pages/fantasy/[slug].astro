@@ -22,7 +22,6 @@ export async function getStaticPaths() {
 const writeup = Astro.props;
 let title = writeup.title;
 let description = `Week ${writeup.week} of Season ${writeup.year} for ${title}`;
-console.log(writeup.author)
 ---
 
 <BaseHead title={title} description={description} />

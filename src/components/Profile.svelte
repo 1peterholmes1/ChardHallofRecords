@@ -3,9 +3,9 @@
   export let bio: any;
   export let image: any;
   export let entries: any;
-  import { PortableText } from "@portabletext/svelte";
   import { placeToColor } from "../utils/colorFuncs";
   import ordinal from "ordinal-numbers";
+  import PortableText from "@components/PortableText.astro";
   // import { urlForImage } from "../utils/urlForImage";
   // console.log(urlForImage(image.asset));
 </script>
