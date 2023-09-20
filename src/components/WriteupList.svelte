@@ -1,6 +1,7 @@
 <script lang="ts">
   export let writeups: any[];
   let years = writeups.map((w) => w.year);
+  years = [...new Set(years)];
 </script>
 
 <ul

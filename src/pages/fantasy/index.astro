@@ -2,12 +2,13 @@
 import BaseHead from "@components/BaseHead.astro";
 import Header from "@components/Header.astro";
 import WriteupList from '@components/WriteupList.svelte'
-// import { Debug } from "astro/components";
+import { Debug } from "astro/components";
 import { useSanityClient } from "astro-sanity";
 
 const writeups = await useSanityClient().fetch(
   `*[_type == "fantasyWriteup"]{..., author->}`
 );
+// console.log(writeups)
 // console.log(cats[0]);
 // console.log(boards);
 ---
@@ -17,7 +18,7 @@ const writeups = await useSanityClient().fetch(
   <body>
     <Header title={"Fantasy Writeups"} />
     <h1 class="tw-text-xl tw-text-center">Fantasy Writeups</h1>
-    <!-- <Debug {boards} /> -->
+    <!-- <Debug {writeups} /> -->
     <WriteupList writeups={writeups} />
   </body>
 </html>

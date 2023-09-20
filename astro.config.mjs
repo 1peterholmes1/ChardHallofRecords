@@ -9,6 +9,7 @@ export default defineConfig({
   integrations: [sanity({
     projectId: 'txj58z4q',
     dataset: 'production',
-    apiVersion: '2023-05-01'
-    }), svelte(), tailwind()]
+    apiVersion: '2023-05-01',
+    useCdn: true,
+  }), svelte(), tailwind()]
 });
