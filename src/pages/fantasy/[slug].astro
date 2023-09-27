@@ -36,7 +36,7 @@ let description = `Week ${writeup.week} of Season ${writeup.year} for ${title}`;
     <div href={`/people/div>${writeup.author.slug?.current}`} class="tw-flex tw-items-center tw-justify-end tw-gap-2 tw-text-white tw-bg-gray-500 tw-p-2 tw-rounded-lg">
       <span>by: </span> 
       <a href={`/people/${writeup.author.slug?.current}`}>{writeup.author.name}</a>
-      <img class="tw-rounded-full" width="40" alt="" src={urlForImage(writeup.author.image.asset).width(100).url()} />
+{writeup.author.image && <img class="tw-rounded-full" width="40" alt="" src={urlForImage(writeup.author.image.asset).width(100).url()} /> }
     </div>   
     </div>
     <article class="tw-prose">
