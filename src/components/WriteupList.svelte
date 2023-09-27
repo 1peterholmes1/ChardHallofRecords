@@ -14,7 +14,9 @@
         <h3 class="tw-w-full tw-text-center tw-text-xl">{y}</h3>
       </div>
       <ul>
-        {#each writeups.filter((w) => w.year === y) as w}
+        {#each writeups
+          .filter((w) => w.year === y)
+          .sort((a, b) => a.week - b.week) as w}
           <li class="tw-py-1 sm:tw-items-center tw-pl-2">
             {w.week}<a class="tw-ml-4" href={`/fantasy/${w.slug.current}`}
               >{w.title}</a
